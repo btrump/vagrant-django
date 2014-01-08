@@ -22,7 +22,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 8000, host: 8000
 
   # Provision bootstrapping scripts
+  config.vm.provision :shell, :path => "bootstrap-update-apt.sh"
   config.vm.provision :shell, :path => "bootstrap-pip.sh"
+  config.vm.provision :shell, :path => "bootstrap-mysql.sh"
+  config.vm.provision :shell, :path => "bootstrap-python-dev.sh"
   config.vm.provision :shell, :path => "bootstrap-django-1.6.1.sh"
 
   # Create a private network, which allows host-only access to the machine
