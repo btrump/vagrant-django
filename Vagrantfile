@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provision bootstrapping scripts
   config.vm.provision :shell, :path => "bootstrap-update-apt.sh"
   config.vm.provision :shell, :path => "bootstrap-pip.sh"
-  config.vm.provision :shell, :path => "bootstrap-mysql.sh"
+  config.vm.provision :shell, :path => "bootstrap-mysql-5.5.sh"
   config.vm.provision :shell, :path => "bootstrap-python-dev.sh"
   config.vm.provision :shell, :path => "bootstrap-django-1.6.1.sh"
 
